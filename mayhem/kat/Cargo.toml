@@ -1,0 +1,16 @@
+[package]
+name = "vector-mayhem-kat"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[dependencies]
+dnsmsg-parser = { path = "../../lib/dnsmsg-parser" }
+vrl = { git = "https://github.com/vectordotdev/vrl.git", branch = "main", default-features = false, features = ["stdlib-base"] }
+
+# Keep this crate out of upstream's root workspace.
+[workspace]
+
+[[bin]]
+name = "vector-kat"
+path = "src/main.rs"

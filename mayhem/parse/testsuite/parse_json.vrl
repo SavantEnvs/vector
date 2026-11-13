@@ -1,0 +1,3 @@
+. = parse_json!(.message)
+.level = downcase(string!(.level))
+del(.host)

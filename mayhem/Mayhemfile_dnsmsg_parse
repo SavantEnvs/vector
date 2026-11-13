@@ -1,0 +1,9 @@
+project: savantenvs/vector
+target: dnsmsg_parse
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/dnsmsg_parse/testsuite
+cmds:
+  - cmd: /mayhem/dnsmsg_parse
+    libfuzzer: true
+    timeout: 10

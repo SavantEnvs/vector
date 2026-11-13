@@ -1,0 +1,2 @@
+.items = map_values(object!(.items)) -> |value| { to_string(value) ?? "x" }
+for_each({"a": 1}) -> |k, v| { log(k, level: "info") }

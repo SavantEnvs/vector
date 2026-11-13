@@ -1,0 +1,9 @@
+project: savantenvs/vector
+target: vrl_compile
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/vrl_compile/testsuite
+cmds:
+  - cmd: /mayhem/vrl_compile
+    libfuzzer: true
+    timeout: 10

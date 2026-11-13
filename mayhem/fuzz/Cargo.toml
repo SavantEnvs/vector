@@ -1,0 +1,37 @@
+[package]
+name = "vector-mayhem-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2024"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+dnsmsg-parser = { path = "../../lib/dnsmsg-parser" }
+vrl = { git = "https://github.com/vectordotdev/vrl.git", branch = "main", default-features = false, features = ["stdlib-base"] }
+
+# Keep this crate out of upstream's root workspace.
+[workspace]
+
+[[bin]]
+name = "parse"
+path = "fuzz_targets/parse.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "vrl_compile"
+path = "fuzz_targets/vrl_compile.rs"
+test = false
+doc = false
+
+[[bin]]
+name = "dnsmsg_parse"
+path = "fuzz_targets/dnsmsg_parse.rs"
+test = false
+doc = false
+
+[profile.release]
+debug = true

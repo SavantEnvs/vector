@@ -1,0 +1,3 @@
+.m = parse_regex!(.message, r'^(?P<ip>\d+\.\d+\.\d+\.\d+) (?P<rest>.*)$')
+.t = now()
+. |= parse_syslog(.message) ?? {}

@@ -1,0 +1,7 @@
+if .status >= 500 {
+  .severity = "error"
+} else if .status >= 400 {
+  .severity = "warn"
+} else {
+  .severity = "info"
+}

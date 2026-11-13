@@ -1,0 +1,4 @@
+x, err = to_int(.foo)
+if err != null { abort }
+.y = x * 2 + (3 - 1) / 2 ?? 0
+.s = "interp: {{ .y }}" ; .t = s'tpl'
